@@ -1,0 +1,1 @@
+core.load_global_script = cm.load_global_script
