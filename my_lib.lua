@@ -11,3 +11,9 @@ function common.get_context_value(class, object_id, func) end
 ---@param character_lookup_string integer | string #Character string of character to kill. This uses the standard character string lookup system. Alternatively, a number may be supplied, which specifies a character cqi.
 ---@param destroy_force boolean? #optional, default value=false Will also destroy the characters whole force if true.
 function cm:kill_character(character_lookup_string, destroy_force) end
+
+
+--- Hides or unhides a character from the view.
+---@param character CHARACTER_SCRIPT_INTERFACE #Character
+---@param hide boolean #hide = true, unhide = false
+function cm:toggle_character_hidden_from_view(character, hide) end
