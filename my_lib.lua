@@ -6,3 +6,8 @@ core.load_global_script = cm.load_global_script
 ---@param func string  usage "method_name()" #Function id on the context object to call. This can also be an expression, but the result must return a context id.
 ---@return ComponentContextObject | any
 function common.get_context_value(class, object_id, func) end
+
+--- Kills the specified character, with the ability to also destroy their whole force if they are commanding one. The character may be specified by a lookup string or by character cqi.
+---@param character_lookup_string integer | string #Character string of character to kill. This uses the standard character string lookup system. Alternatively, a number may be supplied, which specifies a character cqi.
+---@param destroy_force boolean? #optional, default value=false Will also destroy the characters whole force if true.
+function cm:kill_character(character_lookup_string, destroy_force) end
