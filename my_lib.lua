@@ -17,3 +17,24 @@ function cm:kill_character(character_lookup_string, destroy_force) end
 ---@param character CHARACTER_SCRIPT_INTERFACE #Character
 ---@param hide boolean #hide = true, unhide = false
 function cm:toggle_character_hidden_from_view(character, hide) end
+
+
+--- Spawn a plague in a region.
+---@param faction FACTION_SCRIPT_INTERFACE #Faction that spread the plague.
+---@param region REGION_SCRIPT_INTERFACE #Target region.
+---@param plague_key string #Plague key, from the plagues table.
+function cm:spawn_plague_at_region(faction, region, plague_key) end
+
+
+--- Spawn a plague at a settlement.
+---@param faction FACTION_SCRIPT_INTERFACE #Faction that spread the plague.
+---@param settlement SETTLEMENT_SCRIPT_INTERFACE #Target settlement.
+---@param plague_key string #Plague key, from the plagues table.
+function cm:spawn_plague_at_settlement(faction, settlement, plague_key) end
+
+
+--- Spawn a plague at a military force.
+---@param faction FACTION_SCRIPT_INTERFACE #Faction that spread the plague.
+---@param military_force MILITARY_FORCE_SCRIPT_INTERFACE #Target military force.
+---@param plague_key string #Plague key, from the plagues table.
+function cm:spawn_plague_at_military_force(faction, military_force, plague_key) end
