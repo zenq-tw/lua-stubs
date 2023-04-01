@@ -7,6 +7,11 @@ core.load_global_script = cm.load_global_script
 ---@return ComponentContextObject | any
 function common.get_context_value(class, object_id, func) end
 
+---Will look up the context object from the context cache or construct one with the type "context_object_typename" and the data (usually a CQI) from "construction_data", call the context function specified by context_function_id and return the value.
+---@param expression string  #Some context expression on the CcoScriptObject to call. Result must return a context id.
+---@return ComponentContextObject | any
+function common.get_context_value(expression) end
+
 --- Kills the specified character, with the ability to also destroy their whole force if they are commanding one. The character may be specified by a lookup string or by character cqi.
 ---@param character_lookup_string integer | string #Character string of character to kill. This uses the standard character string lookup system. Alternatively, a number may be supplied, which specifies a character cqi.
 ---@param destroy_force boolean? #optional, default value=false Will also destroy the characters whole force if true.
@@ -64,3 +69,22 @@ function cm:apply_effect_bundle_to_characters_force(effect_bundle_key, number_cq
 ---@param effect_bundle_key string #Effect bundle key from the effect bundles table.
 ---@param number_cqi integer #Command queue index of the character commander of the military force to remove the effect from.
 function cm:remove_effect_bundle_from_characters_force(effect_bundle_key, number_cqi) end
+
+
+do
+	---@class CharacterGarrisonTargetAction
+	local CharacterGarrisonTargetAction = {}
+	function CharacterGarrisonTargetAction:mission_result_critial_success() end
+	function CharacterGarrisonTargetAction:mission_result_success() end
+	function CharacterGarrisonTargetAction:mission_result_opportune_failure() end
+	function CharacterGarrisonTargetAction:mission_result_failure() end
+	function CharacterGarrisonTargetAction:mission_result_critial_failure() end
+	function CharacterGarrisonTargetAction:ability() end
+	function CharacterGarrisonTargetAction:attribute() end
+    ---@return string?
+	function CharacterGarrisonTargetAction:agent_action_key() end
+	---@return GARRISON_RESIDENCE_SCRIPT_INTERFACE
+	function CharacterGarrisonTargetAction:garrison_residence() end
+	---@return CHARACTER_SCRIPT_INTERFACE
+	function CharacterGarrisonTargetAction:character() end
+end
