@@ -1,3 +1,6 @@
+---@diagnostic disable duplicate-set-field
+
+
 core.load_global_script = cm.load_global_script
 
 ---Will look up the context object from the context cache or construct one with the type "context_object_typename" and the data (usually a CQI) from "construction_data", call the context function specified by context_function_id and return the value.
@@ -88,3 +91,20 @@ do
 	---@return CHARACTER_SCRIPT_INTERFACE
 	function CharacterGarrisonTargetAction:character() end
 end
+
+---PLAIN ONLY: for some fucking reason CA replaced default with their own implementation. See `string.find_lua()` for normal variant
+---@param subject string
+---@param substring string !!!
+---@param start_from? number
+---@return integer?, integer?
+function string.find(subject, substring, start_from) end
+
+
+---native lua string.find()
+---@param subject string
+---@param substring_or_pattern string
+---@param start_from? number
+---@param plain? boolean
+---@return integer?, integer?
+function string.find_lua(subject, substring_or_pattern, start_from, plain) end
+
