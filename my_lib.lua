@@ -108,3 +108,11 @@ function string.find(subject, substring, start_from) end
 ---@return integer?, integer?
 function string.find_lua(subject, substring_or_pattern, start_from, plain) end
 
+
+do
+	---@class LoadingGame
+	local LoadingGame = {}
+	
+	---@class SavingGame
+	local SavingGame = {}
+end
