@@ -74,6 +74,13 @@ function cm:apply_effect_bundle_to_characters_force(effect_bundle_key, number_cq
 function cm:remove_effect_bundle_from_characters_force(effect_bundle_key, number_cqi) end
 
 
+--- Returns the garrison army from a garrison residence. By default this returns the land army armed citizenry - an optional flag instructs the function to return the naval armed citizenry instead.
+---@param garrison_residence GARRISON_RESIDENCE_SCRIPT_INTERFACE #Garrison residence.
+---@param get_naval boolean? #optional, default value=false Returns the naval armed citizenry army, if set to true.
+---@return MILITARY_FORCE_SCRIPT_INTERFACE #armed citizenry army 
+function cm:get_armed_citizenry_from_garrison(garrison_residence, get_naval) end
+
+
 do
 	---@class CharacterGarrisonTargetAction
 	local CharacterGarrisonTargetAction = {}
