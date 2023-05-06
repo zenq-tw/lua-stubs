@@ -110,9 +110,9 @@ function string.find_lua(subject, substring_or_pattern, start_from, plain) end
 
 
 do
-	---@class LoadingGame
+	---@class LoadingGame: userdata
 	local LoadingGame = {}
 	
-	---@class SavingGame
+	---@class SavingGame: userdata
 	local SavingGame = {}
 end
