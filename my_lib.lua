@@ -116,3 +116,9 @@ do
 	---@class SavingGame: userdata
 	local SavingGame = {}
 end
+
+
+---print provided values in HUD
+---#### comes from mod `PJConsole`
+---@param ... any
+function dout(...) end
