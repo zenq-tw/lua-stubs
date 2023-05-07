@@ -82,6 +82,34 @@ function cm:get_armed_citizenry_from_garrison(garrison_residence, get_naval) end
 
 
 do
+
+	---generic/meta interface (not real one)
+	---@generic X_SCRIPT_INTERFACE
+	---@class X_LIST_SCRIPT_INTERFACE <X_SCRIPT_INTERFACE>
+	--- Returns the item at the index. Make sure the index is between 0 and (max items - 1)
+	---@field item_at fun(self: X_LIST_SCRIPT_INTERFACE, positive:integer): X_SCRIPT_INTERFACE
+	--- Returns the number of items in the list
+	---@field num_items fun(self: X_LIST_SCRIPT_INTERFACE): integer
+	--- Returns a true if there are 0 items in the list
+	---@field is_empty fun(self: X_LIST_SCRIPT_INTERFACE): boolean
+	local X_LIST_SCRIPT_INTERFACE = {}
+
+end
+
+--- An iterator for use with model objects in campaign and battle. When used in a for loop with a model list object, the iterator function returns the index and next item provided by the list object each loop pass.<br />
+--- In campaign, this iterator supports all model list objects such as `region_list`, `character_list`, `military_force_list` etc. 
+--- <br>In battle, this iterator supports model list objects such as `battle_alliances`, `battle_armies` and `battle_units`, as well as `script_units` script collection objects.
+---@param parent_list_object X_LIST_SCRIPT_INTERFACE #parent list object
+---@return fun(): integer, any #list item iterator
+function model_pairs(parent_list_object) end
+
+--- An iterator for use with uicomponent objects, which returns each child in succession. When used in a for loop with a uicomponent object, the iterator function returns the index number and the child corresponding to that index each loop pass.
+---@param parent_uicomponent_object UIC #parent uicomponent object
+---@return fun(): integer, any #child uicomponent iterator
+function uic_pairs(parent_uicomponent_object) end
+
+
+do
 	---@class CharacterGarrisonTargetAction
 	local CharacterGarrisonTargetAction = {}
 	function CharacterGarrisonTargetAction:mission_result_critial_success() end
