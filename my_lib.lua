@@ -81,6 +81,16 @@ function cm:remove_effect_bundle_from_characters_force(effect_bundle_key, number
 function cm:get_armed_citizenry_from_garrison(garrison_residence, get_naval) end
 
 
+--- Replace the name of a character with a new value supplied directly from script. No database lookup will be performed. Be warned that our lua implementation only deals with ANSI strings, so the name will be limited to latin characters.
+--- <br>If a value is not required for a particular name type then a blank string may be supplied for that parameter.
+---@param character CHARACTER_SCRIPT_INTERFACE
+---@param forename string
+---@param surname string
+---@param clan_name string
+---@param other_name string
+function cm:change_character_custom_name(character, forename, surname, clan_name, other_name) end
+
+
 do
 
 	---generic/meta interface (not real one)
