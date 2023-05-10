@@ -163,6 +163,14 @@ do
 end
 
 
+do
+	---@class ScriptEventPendingBattle
+	local ScriptEventPendingBattle = {}
+
+	---@return PENDING_BATTLE_SCRIPT_INTERFACE
+	function ScriptEventPendingBattle:pending_battle() end
+end
+
 ---print provided values in HUD
 ---#### comes from mod `PJConsole`
 ---@param ... any
