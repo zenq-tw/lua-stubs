@@ -171,7 +171,29 @@ do
 	function ScriptEventPendingBattle:pending_battle() end
 end
 
+
+--- out is a table that provides multiple methods for outputting text to the various available debug console spools. It may be called as a function to output a string to the main Lua console spool, but the following table elements within it may also be called to output to different output spools:<br />
+--- grudges<br />
+--- ui<br />
+--- chaos<br />
+--- traits<br />
+--- help_pages<br />
+--- interventions<br />
+--- invasions<br />
+--- design<br />
+---  <br />
+--- out supplies four additional functions that can be used to show tab characters at the start of lines of output:<br />
+--- FunctionDescriptionout.inc_tabIncrements the number of tab characters shown at the start of the line by one.out.dec_tabDecrements the number of tab characters shown at the start of the line by one. Decrementing below zero has no effect.out.cache_tabCaches the number of tab characters currently set to be shown at the start of the line.out.restore_tabRestores the number of tab characters shown at the start of the line to that previously cached.
+--- Tab levels are managed per output spool. To each of these functions a string argument can be supplied which sets the name of the output spool to apply the modification to. Supply no argument or a blank string to modify the tab level of the main output spool.
+---@param output string|number #output
+function out(output) end
+
+
 ---print provided values in HUD
 ---#### comes from mod `PJConsole`
 ---@param ... any
 function dout(...) end
+
+--- Writes output to the lua_mod_log.txt text file, and also to the game console.
+---@param output_text any #output text
+function ModLog(output_text) end
