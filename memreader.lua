@@ -1,3 +1,6 @@
+---@meta memreader
+
+
 memreader = {}
 
 
