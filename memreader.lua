@@ -26,7 +26,7 @@ memreader = {}
 ----------------------------------- Constants -----------------------------------
 
 ---@type pointer pointer to game base address space
-memreader.base = '0x0000000140000000'
+memreader.base = '0x0000000140000000'  ---@diagnostic disable-line: assign-type-mismatch
 
 
 ----------------------------------- Type casting -----------------------------------
