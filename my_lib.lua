@@ -15,6 +15,13 @@ function common.get_context_value(class, object_id, func) end
 ---@return ComponentContextObject | any
 function common.get_context_value(expression) end
 
+
+--- Will create a CcoScriptObject to context cache with specified value (or update existing objects value), and send notification of change so ContextInitScriptObject can refresh display of self and children
+---@param unique_id string #the unique id for the value so can set and get the value
+---@param value DumpableType
+function common.set_context_value(unique_id, value) end
+
+
 --- Kills the specified character, with the ability to also destroy their whole force if they are commanding one. The character may be specified by a lookup string or by character cqi.
 ---@param character_lookup_string integer | string #Character string of character to kill. This uses the standard character string lookup system. Alternatively, a number may be supplied, which specifies a character cqi.
 ---@param destroy_force boolean? #optional, default value=false Will also destroy the characters whole force if true.
