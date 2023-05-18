@@ -198,6 +198,17 @@ do
 end
 
 
+do
+	---@class battle_capture_location_manager
+	local battle_capture_location_manager = {}
+	
+	--- Retrieves a battle_capture_location by numerical index. If no capture location exists at the supplied index then nothing is returned. The number of capture locations on the battlefield can be queried using battle_capture_location_manager:count.
+	---@param index integer
+	---@return battle_capture_location #capture location 
+	function battle_capture_location_manager:item(index) end
+
+end
+
 --- out is a table that provides multiple methods for outputting text to the various available debug console spools. It may be called as a function to output a string to the main Lua console spool, but the following table elements within it may also be called to output to different output spools:<br />
 --- grudges<br />
 --- ui<br />
