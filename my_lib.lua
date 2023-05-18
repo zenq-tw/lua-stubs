@@ -179,6 +179,9 @@ do
 end
 
 
+---@class script_units: script_unit
+
+
 --- out is a table that provides multiple methods for outputting text to the various available debug console spools. It may be called as a function to output a string to the main Lua console spool, but the following table elements within it may also be called to output to different output spools:<br />
 --- grudges<br />
 --- ui<br />
