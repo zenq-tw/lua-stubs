@@ -209,6 +209,21 @@ do
 
 end
 
+
+do
+	---@class battle_manager
+	local battle_manager = {}
+
+	--- Registers a function to be called when a specified phase change occurs. Phase change notifications are sent to the script by the game when the battle changes phases, from 'Deployment' to 'Deployed' and on to 'VictoryCountdown' and 'Complete'. The battle manager writes debug output whenever a phase change occurs, regardless of whether any callback has been registered for it.<br />
+	--- This wraps the underlying functionality provided by battle:register_battle_phase_handler. See that function's documentation for a list of phase change events that may be listened for.
+	---@param phase_name 'Deployment'|'Deployed'|'VictoryCountdown'|'Complete' #phase name
+	---@param callback function #callback
+	function battle_manager:register_phase_change_callback(phase_name, callback) end
+end
+
+
+
+
 --- out is a table that provides multiple methods for outputting text to the various available debug console spools. It may be called as a function to output a string to the main Lua console spool, but the following table elements within it may also be called to output to different output spools:<br />
 --- grudges<br />
 --- ui<br />
