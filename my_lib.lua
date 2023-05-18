@@ -249,3 +249,17 @@ function dout(...) end
 --- Writes output to the lua_mod_log.txt text file, and also to the game console.
 ---@param output_text any #output text
 function ModLog(output_text) end
+
+
+
+
+do 
+	---@class UIC
+	local UIC = {}
+	
+	--- Finds and returns a child of this uicomponent by a series of string names and numeric indexes. The function will step through each argument, attempting to find the uicomponent specified, and using that as the parent from which to find the next. A numeric index argument finds an immediate child of the current search subject, whereas a string name initiates a recursive search through all children/descendants of this uicomponent.
+	---@param ... any #One or more search targets in a sequence. Each search target should be an index number or string name.
+	---@return UIC #of found component 
+	function UIC:SequentialFind(...) end
+
+end
